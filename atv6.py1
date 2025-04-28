@@ -1,0 +1,20 @@
+def validar_float(valor):
+    try:
+        return float(valor)
+    except ValueError:
+        print(f"Valor inválido: '{valor}' não é um número decimal.")
+        return None
+
+temp_min = input("Informe a temperatura mínima do dia: ")
+temp_max = input("Informe a temperatura máxima do dia: ")
+
+min_val = validar_float(temp_min)
+max_val = validar_float(temp_max)
+
+if min_val is not None and max_val is not None:
+    media = (min_val + max_val) / 2
+    variacao = abs(max_val - min_val)
+    print(f"Média da temperatura: {media:.2f}")
+    print(f"Variação da temperatura: {variacao:.2f}")
+else:
+    print("Erro: Não foi possível calcular devido a entradas inválidas.")

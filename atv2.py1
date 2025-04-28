@@ -1,0 +1,19 @@
+def verificar_par_ou_impar(numero):
+    # Verifica se o número é inteiro
+    if isinstance(numero, int):
+        # Retorna True se o número for par, False se for ímpar
+        return numero % 2 == 0
+    else:
+        return "Valor informado é inválido"
+
+# Solicita um número ao usuário
+entrada = input("Digite um número: ")
+
+try:
+    # Tenta converter a entrada para um inteiro
+    numero = int(entrada)
+    resultado = verificar_par_ou_impar(numero)
+    print(resultado)
+except ValueError:
+    # Se a conversão falhar, informa que o valor é inválido
+    print("Valor informado é inválido")

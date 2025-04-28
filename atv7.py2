@@ -1,0 +1,17 @@
+notas = []
+
+for i in range(5):
+    while True:
+        try:
+            nota = float(input(f"Digite a nota {i + 1}: "))
+            notas.append(nota)
+            break
+        except ValueError:
+            print("Por favor, insira um número válido.")
+
+notas.remove(max(notas))
+notas.remove(min(notas))
+
+media = sum(notas) / len(notas)
+
+print(f"\nMédia das notas (descontando a maior e a menor): {media:.1f}")

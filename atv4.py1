@@ -1,0 +1,35 @@
+# Exercício 1 - O filtro de slogans
+
+produto = input("Digite o nome do produto: ")
+slogan = input("Digite o slogan: ")
+palavra_chave = input("Digite a palavra-chave: ")
+
+# Verificação 1: Palavra-chave no slogan
+if palavra_chave in slogan:
+    print(f"Slogan adequado (palavra-chave {palavra_chave} está no slogan).")
+    palavra_chave_ok = True
+else:
+    print(f"Slogan inadequado (palavra-chave {palavra_chave} não está no slogan).")
+    palavra_chave_ok = False
+
+# Verificação 2: Número de palavras
+num_palavras = len(slogan.split())
+if 7 <= num_palavras <= 10:
+    print("Slogan adequado (número de palavras).")
+    palavras_ok = True
+else:
+    print("Slogan inadequado (número de palavras).")
+    palavras_ok = False
+
+# Verificação 3: Início e fim com letra
+slogan_limpo = slogan.strip()
+if slogan_limpo[0].isalpha() and slogan_limpo[-1].isalpha():
+    print("Slogan adequado (início/fim com letra).")
+    inicio_fim_ok = True
+else:
+    print("Slogan inadequado (início/fim com letra).")
+    inicio_fim_ok = False
+
+# Mensagem final
+if palavra_chave_ok and palavras_ok and inicio_fim_ok:
+    print(f'O slogan "{slogan}" cumpre os requisitos de slogan para o produto "{produto}".')

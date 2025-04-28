@@ -1,0 +1,7 @@
+numero = input("Digite um número inteiro: ")
+
+if numero.lstrip("-").isdigit():
+    soma = sum(int(digito) for digito in numero if digito.isdigit())
+    print(f"Soma dos dígitos: {soma}")
+else:
+    print("Valor inválido! Por favor, digite um número inteiro.")

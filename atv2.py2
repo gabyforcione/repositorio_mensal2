@@ -1,0 +1,23 @@
+def verificar_idade(idade):
+    # Verifica se a idade é um número válido
+    if isinstance(idade, int) and idade >= 0:
+        if idade < 18:
+            return "Você é menor de idade."
+        elif 18 <= idade <= 59:
+            return "Você é adulto."
+        else:  # idade >= 60
+            return "Você é idoso."
+    else:
+        return "Valor informado é inválido."
+
+# Solicita a idade do usuário
+entrada = input("Digite sua idade: ")
+
+try:
+    # Tenta converter a entrada para um inteiro
+    idade = int(entrada)
+    resultado = verificar_idade(idade)
+    print(resultado)
+except ValueError:
+    # Se a conversão falhar, informa que o valor é inválido
+    print("Valor informado é inválido.")
